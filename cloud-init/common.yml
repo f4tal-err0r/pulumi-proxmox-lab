@@ -1,0 +1,14 @@
+#cloud-config
+users:
+  - name: ymekuria
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: false
+    ssh_authorized_keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCb3cxgKCk2MLmu1jDDrLRga2Qfq5gf6xFOxuhD8lZjTbISYZSDDUwErbaxlZQ/mzx1zX2v38fMKcNgBuvav3R1vlFcIJQW80D+J9ow2Fojsm9mT9A4q8oNJdfoEUqhR4RsdyM2NREbXb6n1yGuKObqtgQi7c+cQcsgge/rh1IIULrirt7+/9zR/N0ZshDQluyoQEDD7LaiY7Ar0VlEcgr0Tpr9UKrO0GC7/zfy3C5gpHQwJ6c9zxNuGBQB5hX1gYhk5pr+CUclT/Tim66qIYRQxHSYklwvs13LLW/vE2ieNzhl1L+myjEnY2xzqpLl759LIjZmCGO0KppxiTrT7UBKF+LqNqEWpcygKmrrnwnFZYTHFy5F7lELj1vnCdkdszmCMdCp1WtlP1wA9nJGsONSPJumnD9a5KZCMm3vCTkAxVFFW04qxszQViAV3UAkwvdXAhxaVOSrhNG0KUWKnCRM9Z3Ll43urzO2dPl1PanEsz17GThDwi5znjlzeSP/B/8=
+  - name: pulumi
+    passwd: "<hashed-password-here>"
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    lock_passwd: false
+package_upgrade: true
+wait_on_network:
+  ipv4: true
