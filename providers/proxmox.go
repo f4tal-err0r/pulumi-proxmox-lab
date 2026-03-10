@@ -12,16 +12,14 @@ type ProxmoxCredentials struct {
 }
 
 type VMArgs struct {
-    Name          string
-    NodeName      string
-    Cores         int
-    Memory        int    // in MiB
-    DiskSizeGB    int
-    Bridge        string
-	TemplateID    string
+	Name       string
+	NodeName   string
+	Cores      int
+	Memory     int // in MiB
+	DiskSizeGB int
+	Bridge     string
+	TemplateID string
 }
-
-
 
 func NewProxmoxProvider(ctx *pulumi.Context, creds ProxmoxCredentials) (*proxmoxve.Provider, error) {
 	return proxmoxve.NewProvider(ctx, "proxmoxve", &proxmoxve.ProviderArgs{
@@ -33,4 +31,5 @@ func NewProxmoxProvider(ctx *pulumi.Context, creds ProxmoxCredentials) (*proxmox
 	})
 }
 
-func NewProxmoxVM
+func CreateVM(ctx *pulumi.Context, provider *proxmoxve.Provider, args VMArgs) (*proxmoxve.Lxc, error) {
+}
