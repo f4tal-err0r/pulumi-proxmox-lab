@@ -1,6 +1,6 @@
 package main
 
-import "github.com/f4tal-err0r/providers/proxmox"
+import "github.com/f4tal-err0r/pulumi-proxmox-lab/providers/proxmox"
 
 var VMs = []proxmox.VMArgs{
 	{
